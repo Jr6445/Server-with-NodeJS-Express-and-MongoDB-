@@ -42,7 +42,7 @@ dishRouter.route('/')
     .catch((err) => next(err));    
 });
 
-dishRouter.route('/:dishId')
+dishRouter.route('/:dishId') // por ID
 .get((req,res,next) => {
     Dishes.findById(req.params.dishId)
     .then((dish) => {
@@ -77,7 +77,10 @@ dishRouter.route('/:dishId')
     .catch((err) => next(err));
 });
 
-//comentarios
+
+
+//comentarios---------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------
 
 dishRouter.route('/:dishId/comments')
 .get((req,res,next) => {
@@ -144,7 +147,7 @@ dishRouter.route('/:dishId/comments')
     .catch((err) => next(err));    
 });
 
-dishRouter.route('/:dishId/comments/:commentId')
+dishRouter.route('/:dishId/comments/:commentId') // por ID
 .get((req,res,next) => {
     Dishes.findById(req.params.dishId)
     .then((dish) => {
